@@ -1,3 +1,4 @@
+#!/usr/bin/env Rscript
 if ( !require("primes") ) install.packages("primes")
 
 primes <- primes::generate_primes(max = 150000L)
