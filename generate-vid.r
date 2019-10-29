@@ -27,7 +27,7 @@ png("frames/primes%05i.png", 1152L, 720L, "px")
     bty = "n",
     col = "#47ffd7"
   )
-  for (i in seq(10, 1e6, 100)) {
+  for (i in 2**(0:20)) {
     plot.new()
     lim <- i
     lims <- c(-lim, lim)
@@ -36,4 +36,5 @@ png("frames/primes%05i.png", 1152L, 720L, "px")
   }
 dev.off()
 
-system("ffmpeg -y -i frames/primes%05d.png out.mp4")
+system("ffmpeg -y -framerate 3 -i frames/primes%05d.png out.mp4")
+
