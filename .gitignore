@@ -1,4 +1,5 @@
 frames/*.png
 *.mp4
 *.tar.gz
+.Rhistory
 
