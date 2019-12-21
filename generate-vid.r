@@ -3,12 +3,7 @@ if ( !require("primes") ) install.packages("primes")
 
 primes <- primes::generate_primes(max = 2e6)
 
-polar_to_cartesian <- function(r,t) {
-  c(
-    r * cos( t ),
-    r * sin( t )
-  )
-}
+polar_to_cartesian <- function(r,t) r * c(cos(t), sin(t))
 
 get_visible_points <- function(p, lim) {
   check <- abs(p) < lim

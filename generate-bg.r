@@ -3,12 +3,7 @@ if ( !require("primes") ) install.packages("primes")
 
 primes <- primes::generate_primes(max = 150000L)
 
-polar_to_cartesian <- function(r,t) {
-  c(
-    r * cos( t ),
-    r * sin( t )
-  )
-}
+polar_to_cartesian <- function(r,t) r * c(cos(t), sin(t))
 
 p <- do.call("rbind", lapply(primes, function(x) polar_to_cartesian(x, x)))
 
